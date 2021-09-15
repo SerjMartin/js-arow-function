@@ -71,14 +71,20 @@ let students = [
 const averagePoints = (arr, subject) => {
    let allPoints = 0;
     let sum = 0;
-    for(let itm of arr) {
-      if(subject in itm.results) {
+    for(let itm of arr) {  //-- this function going throught the all arr --//
+      if(subject in itm.results) {    //-- this function going trought subjects results --//
         allPoints += itm.results[subject];
         sum+=1;
       }
     }
-    return allPoints / sum;
+    return allPoints / sum;  //-- this function return overage of subject's result --//
 };
 
 let result = averagePoints(students, 'english');
 console.log(result);
+//--------------------------------- copy the arr and add value passet to it--/
+let subject = [...students[0].subjects]; //-- this copy first object,s subjects arr --/
+const update = (item, val) => [...item, val];   //-- this function copy arr and add the value passet to it--/
+let updateSubjects = update(subjects, "Electronics");
+console.log(updateSubjects); //-- log out apdated arr --//
+console.log(students[0]);  //-- log out full first object --//
