@@ -39,7 +39,7 @@ const updateSortReverse =  (arr, ...letters) => {
     return arr2;
 };
 //-- semilar--//
-//--const updateSortReverse = (arr, ...letters) => [...arr, ...letters].sort().reverse();--//
+//--const updateSortReverse = (arr, ...letters) => [...arr, ...letters].sort().reverse();--//  
 let reverseSort = updateSortReverse(moreMixedLetters, 'n', 'm', 'o');
 
 
