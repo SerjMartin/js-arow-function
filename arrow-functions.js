@@ -88,3 +88,13 @@ const update = (item, val) => [...item, val];   //-- this function copy arr and 
 let updateSubjects = update(subjects, "Electronics");
 console.log(updateSubjects); //-- log out apdated arr --//
 console.log(students[0]);  //-- log out full first object --//
+// extract subject
+const makeList = (arr, student) => {
+    for (let itm of arr) {
+        if (itm.name == student) {
+            return itm.subjects;
+        }
+    }
+};       //-- This function will extract all subjects of entering student's name from studens array--/
+let [firs, second, ...rest] = makeList(studens, 'John');
+console.log(first, second, rest);
