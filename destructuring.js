@@ -14,8 +14,7 @@ console.log(john, mary, joe);
 
 
 // Destructuring objects
-let j
-jobs = {
+let jobs = {
     mike: "desiner",
     jill: "developer",
     alicia: "accountant",
@@ -58,4 +57,4 @@ let favoriteFoods = {
 let { brian, anna, ...rest } = favoriteFoods;
 console.log(brian);
 console.log(anna);
-console.log(rest);
+co+nsole.log(rest);
