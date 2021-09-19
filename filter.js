@@ -60,3 +60,19 @@ const people = [
       ]
     },
   ];
+
+//   const candidate = students.filter(student => {
+//       let strongSkills = student.skills.filter(skill => skill.yrsExperience >= 5);
+//       return strongSkills.length > 0;
+//   })
+//   console.log(candidate);
+//----------------------OR---------------
+
+
+const has5yearsExp = skills => skills.yrsExperience >= 5;
+const hasStrongSkills = student => student.skills.filter(has5yearsExp).length > 0;
+const candidate = students.filter(hasStrongSkills);
+console.log(candidate);
+
+const nameCandidate = candidate.map(itm => itm.name);
+console.log(nameCandidate);  // log out only name from candidate ['mark', 'Jason']
