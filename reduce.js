@@ -48,18 +48,18 @@ const teamMembers = [
   
   // Totaling a specific object property
   let totalExperience = teamMembers.reduce((acc, curr) => acc + curr.yrsExperience, 0);
-  console.log(totalExperience);
+  console.log(totalExperience);  // wil add all allyrsExperience number.
   
   
   // Grouping by a property, and totaling it too
   let experienceByProfession = teamMembers.reduce((acc, curr) => {
     let key = curr.profession;
-    if(!acc[key]) {
+    if(!acc[key]) {             // if this profession dosen't exist this will sent and creat new line of experienceByProfession
       acc[key] = curr.yrsExperience;
     } else {
-      acc[key] += curr.yrsExperience;
+      acc[key] += curr.yrsExperience;   // if this profession exist then will add yrsExperience number
     }
-    return acc;
-  }, {});
+    return acc; //return all type of profession ant total yrsExperience
+  }, {});  // {} This is mean empty object
 
   console.log(experienceByProfession);
