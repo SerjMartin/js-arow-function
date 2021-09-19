@@ -57,4 +57,4 @@ let favoriteFoods = {
 let { brian, anna, ...rest } = favoriteFoods;
 console.log(brian);
 console.log(anna);
-co+nsole.log(rest);
+console.log(rest);
