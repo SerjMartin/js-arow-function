@@ -4,12 +4,12 @@
  */
 
 // Vanilla JavaScript Function
- function addTwoNumbers(a, b) {
+ function addTwoNumbers1(a, b) {
      // Code block
      return a + b;
  }
- let sum = addTwoNumbers(3, 5);
- console.log(sum);
+ let sum1 = addTwoNumbers1(3, 5);
+ console.log(sum1);
 
 
 // Arrow Function With Parameters
@@ -85,7 +85,7 @@ console.log(result);
 //--------------------------------- copy the arr and add value passet to it--/
 let subject = [...students[0].subjects]; //-- this copy first object,s subjects arr --/
 const update = (item, val) => [...item, val];   //-- this function copy arr and add the value passet to it--/
-let updateSubjects = update(subjects, "Electronics");
+let updateSubjects = update(subject, "Electronics");
 console.log(updateSubjects); //-- log out apdated arr --//
 console.log(students[0]);  //-- log out full first object --//
 // extract subject
@@ -96,5 +96,8 @@ const makeList = (arr, student) => {
         }
     }
 };       //-- This function will extract all subjects of entering student's name from studens array--/
-let [firs, second, ...rest] = makeList(studens, 'John');
+let [first, second, ...rest] = makeList(students, 'John');
 console.log(first, second, rest);
+
+const englishCandidates = students.filter(itm => itm.results.english);
+console.log(englishCandidates); // log out only students who got result at english
