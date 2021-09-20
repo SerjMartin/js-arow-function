@@ -9,7 +9,7 @@
      return a + b;
  }
  let sum1 = addTwoNumbers1(3, 5);
- console.log(sum1);
+ console.log('N1:', sum1);
 
 
 // Arrow Function With Parameters
@@ -19,14 +19,14 @@ const addTwoNumbers = (a, b) => {
     return a + b;
 }
 let sum = addTwoNumbers(3, 5);
-console.log(sum);
+console.log('N2:', sum);
 
 // Single Line Arrow Function With Parameters
 
 // const addTwoNumbers2 = (a, b) => (a + b); also valid
 const addTwoNumbers2 = (a, b) => a + b;
 let sum2 = addTwoNumbers2(6, 4);
-console.log(sum2);
+console.log('N3:', sum2);
 
 // Implicit Returns
 
@@ -43,7 +43,7 @@ const returnMultipleLines = () => (
      This is multiple line string!
     <p>`
 )
-console.log(returnMultipleLines());
+console.log( 'N4:', returnMultipleLines());
 
 // class ex.
 let students = [
@@ -63,7 +63,7 @@ let students = [
         name: 'Adam',
         subjects: ['science', 'maths', 'art'],
         teacher: {science: 'Iris', maths: 'Harry', art: 'Simon'},
-        results: {science: 63, maths: 79, art: 95},
+        results: {science: 63, maths: 79, art: 95, english: 48},
     }
     
    
@@ -81,7 +81,7 @@ const averagePoints = (arr, subject) => {
 };
 
 let result = averagePoints(students, 'english');
-console.log(result);
+console.log('N5:', result);
 //--------------------------------- copy the arr and add value passet to it--/
 let subject = [...students[0].subjects]; //-- this copy first object,s subjects arr --/
 const update = (item, val) => [...item, val];   //-- this function copy arr and add the value passet to it--/
@@ -97,7 +97,25 @@ const makeList = (arr, student) => {
     }
 };       //-- This function will extract all subjects of entering student's name from studens array--/
 let [first, second, ...rest] = makeList(students, 'John');
-console.log(first, second, rest);
+console.log('N6:', first, second, rest);
 
 const englishCandidates = students.filter(itm => itm.results.english);
 console.log(englishCandidates); // log out only students who got result at english
+
+
+// --this function calculate the higher result at english object using reduce() medot--
+const biggest = students.reduce((acc, curr) => {
+    acc = acc.max > curr.results.english ? acc: {name:curr.name, max:curr.results.english};
+    return acc;
+    }, {name: '', max: 0});
+
+console.log('N7:', biggest);  //-- or using destructuring/
+
+const biggest1 = students.reduce(({max, name}, {name, results:{math}}) => {
+    if(max < math) {
+        acc = {name: name, max: math};
+    }
+    return acc;
+});
+
+console.log('N8:', biggest1);
